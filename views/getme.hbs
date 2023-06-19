@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Get Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Get Me</h1>
+  <form action="api/v1/auth/me" method="GET">
+    <button type="submit">Get Me</button>
+  </form>
+  {{#if user}}
+    <h2>User Details</h2>
+    <p>Name: {{user.name}}</p>
+    <p>Email: {{user.email}}</p>
+  {{else}}
+    <p>No user data available.</p>
+  {{/if}}
+</body>
+</html>
